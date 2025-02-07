@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Olx</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="navbar" style="display: flex; width: 90%; margin: auto;">
+            <div class="olx">
+                <img src="data:image/png;base64,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" width="50px">
+            </div>
+            <div class="car-img">
+                <div class="car">
+                    <i class="fa-solid fa-car"
+                        style="margin-right: 10px;border-radius: 50% ; background-color: rgb(247, 247, 241); padding: 10px;"></i>
+                    <a href="Motors">Motors</a>
+                </div>
+            </div>
+            <div class="car-img">
+                <div class="building">
+                    <i class="fa-solid fa-building"
+                        style="margin-right: 10px;border-radius:50%; background-color: rgb(243, 243, 235); padding: 10px;"></i>
+                    <a href="Motors">Property</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="icon">
+            <select name="" id="" class="select">
+                <option value="">Pakistan</option>
+                <option value="">Use current location</option>
+                <option value="">See ads in all Pakistan</option>
+            </select>
+            <input type="text" value="" placeholder="Find Mobile Phones,and more" class="input">
+            <span class="search"><img src="data:image/png;base64,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" width="45px"></span>
+            <div class="buttons">
+                <span class="login">Login</span>
+                <span class="plus">+SELL</span>
+            </div>
+        </div>
+        </div>
+        </div>
+
+    </header>
+    <div class="all-categories">
+        <select name="" id="" class="categories">
+            <option value="">ALL CATEGORIES</option>
+            <option value="">Mobile Phones</option>
+            <option value="">Vehicles</option>
+            <option value="">Property for Sale</option>
+            <option value="">Property for Rent</option>
+            <option value="">Electronics </option>
+        </select>
+        <div class="link-items">
+            <a href="" class="a">Mobile Phones</a>
+            <a href="" class="b">Cars</a>
+            <a href="" class="c">Motorcycles</a>
+            <a href="" class="d">Houses</a>
+            <a href="" class="e">Video-Audios</a>
+            <a href="" class="f">Tablets</a>
+            </div>
+    </div>
+    <div class="olx-img">
+        <img src="https://images.olx.com.pk/thumbnails/512911842-800x600.webp">
+    </div>
+    <div class="olx-short">
+        <img src="./olx-file img.webp" width="700px" alt="">
+    </div>
+    <h2 class="all">All categories</h2>
+    <div class="boxes" >
+
+        <div class="all-images">
+            <img src="../All Images/mobiles.8c768c96bfde33f18fcf5af2a8b9cf71.png" alt="">
+            <h3>Mobiles</h3>
+        </div>
+        <div class="all-images">
+            <img src="../All Images/vehicles.29fb808d5118f0db56f68a39ce5392e2.png" alt="">
+            <h3>Vehicles</h3>
+        </div>
+        <div class="all-images" >
+            <img src="../All Images/property-for-sale.e3a00dbfdaa69fe5f713665f1069502f.png" alt="">
+            <h3>Property For <br> Sale</h3>
+        </div>
+        <div class="all-images">
+            <img src="../All Images/property-for-rent.8436595fbaa90d47f0178006f57090a8.png" alt="">
+            <h3>Property For <br> Rent</h3>
+        </div>
+        <div class="all-images">
+            <img src="../All Images/electronics-home-appliances.46e034dd8adca44625c2c70e4d1b5984.png" alt="">
+            <h3>Electronics & Home Appliances</h3>
+        </div>
+        <div class="all-images" >
+            <img src="../All Images/bikes.4dcd02c49b2b83aa5b4d629d1e2b383e.png" alt="">
+            <h3>Bikes</h3>
+        </div>
+        <div class="all-images">
+            <img src="../All Images/business-industrial-agriculture.704a6ffb9081bc94b11c102cc613670f.png" alt="">
+            <h3>Business, Industrial & Agriculture</h3>
+        </div>
+    </div>
+<div class="boxes2">
+    <div>
+        <img src="../All Images/services.dc6aef196c0403dc61b0ee813f66fa5b.png" alt="">
+        <h3>Services</h3>
+    </div>
+    <div>
+        <img src="../All Images/jobs.79e6136dda02111cf8e7afe26b9e0f93.png" alt="">
+        <h3>Jobs</h3>
+    </div>
+    <div>
+        <img src="../All Images/animals.62d396e85f7523dbc8ff23889fdd5c31.png" alt="">
+        <h3>Animals</h3>
+    </div>
+    <div>
+        <img src="../All Images/furniture-home-decor.66bcf157a53ea4c736a5b0af41219475.png" alt="">
+        <h3>Furniture & Home Decor</h3>
+    </div>
+    <div>
+        <img src="../All Images/fashion-beauty.dd2cf7638c29b0e5c084a6673dd94dd7.png" alt="">
+        <h3>Fashion & Beauty</h3>
+    </div>
+    <div>
+        <img src="../All Images/books-sports-hobbies.6fee8d841b332d65a10f050f4a2ee1c8.png" alt=""> 
+        <h3>Books, Sports & Hobbies</h3>
+    </div>
+    <div>
+        <img src="../All Images/kids.cd8d8864804f1c35dd6a7df68268a48d.png" alt="width 10px"> 
+        <h3>Kids</h3>
+    </div>
+</div>
+<div>
+    <h1>Mobile Phones</h1>
+</div>
+
+<div class="head">
+    <img src="https://www.mega.pk/items_images/Samsung+Galaxy+S10+Plus+8GB+RAM+512GB+Storage+Pta+Approved+Price+in+Pakistan%2C+Specifications%2C+Features_-_18422.webp" alt="" style="width: 300px; height: 145px;" >
+    
+    <div class="card">
+    <h4>128,999 - PKR</h4>
+    <p>512 GB 
+        Samsung Galaxy S10 Plus  <br> 
+        <br> 
+        Box packed Pta Approved  <br> 
+        </p>
+    </div>
+    </div>
+<div class="head1">
+    <img src="https://www.mega.pk/items_images/OnePlus+10+Pro+12+GB+Ram+256+GB+Storage+5G+Non+PTA+Chinees+Version+Price+in+Pakistan%2C+Specifications%2C+Features_-_23288.webp" alt="" style="width: 300px; height: 160px;" >
+    
+    <div class="card">
+    <h4>129,999 - PKR</h4>
+    <p>OnePlus 10 pro 12GB Ram  256GB Storage  <br>5G Non PTA Chinees Version
+    </p>
+    </div>
+    </div>
+<div class="head2">
+    <img src="https://www.mega.pk/items_images/Infinix+Zero+40+8GB+RAM+256GB+Storage+PTA+Approved+Price+in+Pakistan%2C+Specifications%2C+Features_-_25573.webp" alt="" style=" width: 300px; height: 130px;" >
+    
+    <div class="card">
+    <h4> 80,000 - PKR </h4>
+    <p>Infinix Zero 40 8GB RAM 256GB Storage <br>pta approved</p>
+    </div>
+    </div>
+<div class="head3">
+    <img src="https://appleman.pk/cdn/shop/files/2_5ae36537-410b-4002-b0db-dc1d32e9f2a5.png?v=1726242946&width=1200" alt="" style=" width: 300px; height: 160px;" >
+    
+    <div class="card">
+    <h4> 505,399 - PKR </h4>
+    <p>iPhone 16 Pro Max PTA Approved</p>
+    </div>
+    </div>
+    <h1>Cars</h1>
+   <div class="cars">
+    <div class="cars2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB2aLMDCyesLVp5GoD1bT4kIq7p_A2U48YrA&s" alt="" style="width: 300px; height: 170px;">
+        <h4>Rs 5,000,000</h4>
+        <p style="margin-left: 6px;">YEAR: 2021
+            GRADE: 4.5
+            MILEAGE: 46,851 <br>
+            <COLOR: gray> <br>
+            ENGINE: 660 CC
+            TRANSMISSION: <br> AUTOMATIC <br>
+            FUEL TYPE: HYBRID</p>
+    </div>
+    <div class="cars3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu0IAHlvFQgHrZ5nmX9xOIZGZTDjE_wxZqMA&s" alt="" style="width: 300px; height: 145px;">
+        <h4>Rs 4,000,000</h4>
+        <p style="margin-left: 6px;">Mitsubishi Pajero <br>
+            *Model 1998
+            *Seat cover fitted <br> 
+            *GDI v6 3500 Petrol <br>
+            *Expensive rims installed <br>
+            *Matting on floor done <br>
+            *Original Number plates, <br>
+            *Power Steering <br> 
+            *LED Lights </p>
+    </div>
+    <div class="cars4">
+        <img src="https://suzukifortmotors.com/wp-content/uploads/2020/12/Suzuki-Cultus-White.jpg" alt="" style="width: 300px; height: 145px;">
+        <h4>Rs 3,000,000</h4>
+        <p style="margin-left: 1rem;">SUZUKI CULTUS 2022  <br>MODEL VXL MANUAL <br> 
+            B2B 110 % ORIGINAL CAR <br> JUST 19,000 KM DRIVEN <br> ORIGINAL
+            BRAND NEW SMELL <br> 
+            BRAND NEW CONDITION <br>
+            100% TYRES
+            100% ENGINE <br>
+            100% SUSPENSION
+            QUALITY <br> ALWAYS SPEAK ITSELFS.</p>
+    </div>
+    <div class="cars5">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbrJm5ie7ONTqToxzHI7o7Kg0NeHlO6aoBDw&s" alt="" style="width: 300px; height: 145px;">
+<h4>Rs 2,000,000</h4>
+<p style="margin-left: 1rem;">Toyota Passo 2015 <br>
+
+    *Km Driven ;  63,300 <br>
+    *Condition ; USED <br>
+    *Body Wise Perfect Condition <br>
+    *Outside/Inside  <br>Complete Orignal
+    *Engine Performance Perfect <br>
+    *Suspention Perfect</p>
+    </div>
+</div>
+<h1>Bikes & Motorcycles</h1>
+<div class=" bikes">
+    <div class="bike1">
+<img src="https://static-01.daraz.pk/p/acddb549118fc23a85fb672c7bf3e3f6.jpg" alt="" style="width: 300px; height: 145px;">
+<h4>Rs 100,000</h4>
+<p style="margin-left: 10px;">*Hi Speed Infinity <br> Urgent For Sale  <br> Hi Speed In Bikes <br>  Total Geniune*
+    CONDITION : 10/10 <br>
+    REGISTRATION Karachi <br>
+    NO WORK REQUIRED <br>
+    NO DENTS AND NO TOUCHUPS <br>
+    Just Buy And Ues </p>
+</div>
+    <div class="bike2">
+<img src="https://photo-cdn.urdupoint.com/show_img_new/bikes/bike_img/800x500/1552563734_4_bike.jpg._3" alt="" style="width: 300px; height: 145px;">
+<h4>Rs 400,000</h4>
+<p style="margin-left: 10px;"> Honda CB 150F <br> Latest Model 2025 <br> Engine: 4 Stroke SOHC Inherent Turbo Cooled engine with Balancer<br> Starting: Kick & Electric Start <br>best experience guranteed for you</p>
+</div>
+    <div class="bike3">
+<img src="https://cache4.pakwheels.com/system/bike_model_pictures/1831/original/4.jpg?1669285373" alt=""  style="width: 300px; height: 145px;">
+<h4>Rs 685,000</h4>
+<p style="margin-left: 10px;">Unique Crazer UD-150 <br> Latest Model 2025 <br> Engine: 4-Stroke Air Cooled Engine  <br> Starting: Kick & Push Start <br> best experience guranteed for you </p>
+</div>
+    <div class="bike4">
+<img src="https://static.pakwheels.com/2013/06/Hayabusa-Front.jpg" alt="" style="width: 300px; height: 145px;">
+<h4>Rs 850,000</h4>
+<p style="margin-left: 10px ;">Suzuki heavy bike <br> Latest Model 2025 <br>
+    Starting: Kick & Push Start <br>
+    Non Accidental <br>
+    Sealed Engine With  <br>Zero Work
+    All Documents Clear <br>
+    All Parts Genuine <br>
+    Neat and Clean</p>
+</div>
+</div>
+    
+    </div>
+</div>
+<div>
+<img src="https://www.olx.com.pk/assets/olxMobileApp.f5579f77e849b600ad60857e46165516.webp" alt="" width="400px" class="margin-left">
+</div>
+<div class="last-img"> 
+    <img src="./akhiri.webp" alt="" width="600PX">
+    <h2 style="margin-bottom: 10%;">Get your app today</h2>
+    <img src="https://www.olx.com.pk/assets/iconAppStoreEN_noinline.a731d99c8218d6faa0e83a6d038d08e8.svg" alt="" width="100px" style="margin-right: 8px;">
+    <img src="https://www.olx.com.pk/assets/iconGooglePlayEN_noinline.9892833785b26dd5896b7c70b089f684.svg" alt="" width="100px" style="margin-right: 8px;">
+    <img src="https://www.olx.com.pk/assets/iconAppGallery_noinline.6092a9d739c77147c884f1f7ab3f1771.svg" alt="" width="100px" style="margin-right: 8px;">
+</div>
+<div class="footer">   
+    <ul class="popular">
+        <h4>Popular <br> Categories</h4>
+        <li>Cars</li>
+        <li>Flats for rent</li>
+        <li>Mobile Phones</li>
+        <li>Jobs</li>
+    </ul>   
+    <ul class="trending">
+        <h4> Trending <br> Searches</h4>
+        <li>Bikes</li>
+        <li>Watches</li>
+        <li>Books</li>
+        <li>Dogs</li>
+    </ul>
+<ul class="about">
+    <h4>About Us</h4>
+    <li>About Dubizzle Group</li>
+    <li>OLX Blog</li>
+    <li>Contact Us</li>
+    <li>OLX for Businesses</li>
+</ul>
+<ul class="help">
+    <h4>OLX</h4>
+    <li>Help</li>
+    <li>Sitemap</li>
+    <li>Terms of use</li>
+    <li>Privacy Policy</li>
+</ul>
+<ul class="follow">
+    <h4>Follow us</h4>
+    <img src="https://www.olx.com.pk/assets/iconTwitter_noinline.6037fa7d9a7b9d6408fb1b3d70524b97.svg" alt="" width="25px">
+    <img src="https://www.olx.com.pk/assets/iconFacebook_noinline.773db88c5b9ee5aaab365e61cdb750da.svg" alt=""  width="25px">
+    <img src="https://www.olx.com.pk/assets/iconYoutube_noinline.c85bd6801ec83d6a3b498059550bef26.svg" alt=""  width="25px">
+    <img src="https://www.olx.com.pk/assets/iconInstagram_noinline.d7d5811ebc44e03a674c8d0b5ff3f232.svg" alt="" width="25px">
+    <div class="la">
+        <img src="https://www.olx.com.pk/assets/iconAppStoreEN_noinline.a731d99c8218d6faa0e83a6d038d08e8.svg" alt="" width="80px">
+        <img src="https://www.olx.com.pk/assets/iconGooglePlayEN_noinline.9892833785b26dd5896b7c70b089f684.svg" alt="" width="80px">
+        <img src="https://www.olx.com.pk/assets/iconAppGallery_noinline.6092a9d739c77147c884f1f7ab3f1771.svg" alt="" width="80px">
+    </div>
+
+</ul>
+
+</div>
+<div class="lin">
+    <h6>Free Classifieds in Pakistan . © 2006-2025 OLX</h6>
+</div>
+</body>
+
+
+
+</html>
